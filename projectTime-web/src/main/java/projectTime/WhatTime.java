@@ -36,9 +36,9 @@ public class WhatTime extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Long time = f.info();
+		
 		Formatter fmt = new Formatter();
-		String str = fmt.format("%tT",time).toString();
+		String str = fmt.format("%tT",f.info()).toString();
 		fmt.close();
 		request.setAttribute("timeNow", str);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
